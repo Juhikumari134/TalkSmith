@@ -9,7 +9,7 @@ const monaSans = Mona_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PrepWise",
+  title: "TalkSmith",
   description: "An AI powered platform to prepare for mock interview",
 };
 
