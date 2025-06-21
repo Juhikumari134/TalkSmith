@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"; // ✅ Correct SDK for browser
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDhAgoxGpHo2Xk84uaT9owkHbohCei3gw4",
-  authDomain: "talksmith-52998.firebaseapp.com",
-  projectId: "talksmith-52998",
-  storageBucket: "talksmith-52998.appspot.com", // ✅ fixed typo: .app → .app**spot**.com
-  messagingSenderId: "873685438792",
-  appId: "1:873685438792:web:c03a1bc5046dc80db6637d",
-  measurementId: "G-FMRL5H2LQ5",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
