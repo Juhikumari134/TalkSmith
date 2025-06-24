@@ -82,10 +82,16 @@ const AuthForm = ({ type }: { type: FormType }) => {
           return;
         }
 
-        await signIn({
+        const result = await signIn({
           email,
           idToken,
         });
+
+        if (!result?.success) {
+    toast.error(result?.message || "Failed to sign in. Try again.");
+    return;
+  }
+
 
         toast.success("Signed in successfully.");
         router.push("/");
@@ -106,7 +112,9 @@ const AuthForm = ({ type }: { type: FormType }) => {
           <h2 className="text-primary-100">TalkSmith</h2>
         </div>
 
-        <h3 className="text-center">Practice job interviews with AI</h3>
+       <h3 className="text-center text-xl font-semibold text-white">
+  Practice job interviews with AI
+</h3>
 
         <Form {...form}>
           <form
