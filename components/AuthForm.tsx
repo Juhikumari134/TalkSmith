@@ -2,13 +2,12 @@
 
 import { z } from "zod";
 import Link from "next/link";
-
+import Image from "next/image";
 import { toast } from "sonner";
 import { auth } from "@/firebase/client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 
 import {
   createUserWithEmailAndPassword,
@@ -102,13 +101,11 @@ const AuthForm = ({ type }: { type: FormType }) => {
     <div className="card-border lg:min-w-[566px]">
       <div className="flex flex-col gap-6 card py-14 px-10">
         <div className="flex flex-row gap-2 justify-center">
-          <img src="/logo.png" alt="logo" height={32} width={38} />
+          <Image src="/logo.png" alt="logo" height={32} width={38} />
           <h2 className="text-primary-100">TalkSmith</h2>
         </div>
 
-       <h3 className="text-center text-xl font-semibold text-white">
-  Practice job interviews with AI
-</h3>
+        <h3 className="text-center">Practice job interviews with AI</h3>
 
         <Form {...form}>
           <form
